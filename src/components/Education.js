@@ -6,9 +6,9 @@ import Image from 'next/image';
 const Education = () => {
   const education = [
     {
-      institution: "Dev Bhoomi Institute of Technology",
-      degree: "Bachelor of Technology",
-      field: "Computer Science & Engineering",
+      institution: "Dehradun Institute of Technology",
+      degree: "Masters ofComputer Applications",
+      field: "Computer Engineering",
       duration: "2022 - 2024",
       location: "Dehradun, India",
       logo: "/education/ditu.jpg",
@@ -22,7 +22,7 @@ const Education = () => {
     },
     {
       institution: "Maharaja Ganga Singh University",
-      degree: "Bachelor of Computer Applications",
+      degree: "Bachelor of Arts",
       field: "Computer Applications",
       duration: "2019 - 2022",
       location: "Bikaner, India",
