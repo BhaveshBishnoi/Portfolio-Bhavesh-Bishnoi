@@ -45,7 +45,7 @@ const Navbar = () => {
     }`}>
       {/* Backdrop */}
       <div className={`absolute inset-0 transition-all duration-300 ${
-        isScrolled ? 'backdrop-blur-lg bg-gray-900/70' : 'backdrop-blur-none bg-transparent'
+        isScrolled || isOpen ? 'backdrop-blur-lg bg-gray-900/70' : 'backdrop-blur-sm bg-gray-900/30'
       }`}></div>
 
       {/* Content */}
@@ -58,7 +58,7 @@ const Navbar = () => {
             onClick={(e) => handleClick(e, isHome ? '#home' : '/')}
           >
             <span className="bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
-              BB
+              Bhavesh Bishnoi
             </span>
           </Link>
 

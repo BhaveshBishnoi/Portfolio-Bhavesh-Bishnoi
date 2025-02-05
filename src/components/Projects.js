@@ -12,7 +12,7 @@ const Projects = () => {
     {
       title: "Portfolio Website",
       description: "A modern portfolio website built with Next.js, Tailwind CSS, and glass morphism design. Features responsive design and smooth animations.",
-      image: "/projects/portfolio.png",
+      image: "/projects/nextjs/portfolio.webp",
       technologies: ["Next.js", "React", "Tailwind CSS", "Glass UI"],
       github: "https://github.com/BhaveshBishnoi/Portfolio-Bhavesh-Bishnoi",
       live: "https://bhaveshbishnoi.vercel.app",
@@ -20,14 +20,14 @@ const Projects = () => {
     {
       title: "JavaScript Projects Collection",
       description: "A collection of small JavaScript projects showcasing various web development concepts and interactive features.",
-      image: "/projects/small-js-projects.png",
+      image: "/projects/javascript/small-js-projects.png",
       technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "TailwindCSS"],
       github: "https://github.com/BhaveshBishnoi/JavaScript-Small-Projects",
     },
     {
       title: "Hindi Creator Blog",
       description: "A technology blog platform built for Hindi-speaking audience, featuring tech articles and tutorials.",
-      image: "/projects/hindicreator.png",
+      image: "/projects/wordpress/hindicreator.webp",
       technologies: ["WordPress", "PHP", "MySQL", "SEO", "Content Management"],
       github: "",
       live: "https://hindicreator.com",
@@ -35,7 +35,7 @@ const Projects = () => {
     {
       title: "The Bagdi's E-commerce Website",
       description: "Custom WordPress theme and plugins development for The Bagdi's E-commerce Website.",
-      image: "/projects/thebagdis.png",
+      image: "/projects/wordpress/thebagdis.webp",
       technologies: ["WordPress", "PHP", "jQuery", "Bootstrap", "MySQL"],
       github: "",
       live: "https://thebagdis.com",
@@ -43,7 +43,7 @@ const Projects = () => {
     {
       title: "The Indian Roamer",
       description: "Custom WordPress theme and plugins development for The Indian Roamer Travel Website.",
-      image: "/projects/theindianroamer.png",
+      image: "/projects/wordpress/theindianroamer.webp",
       technologies: ["WordPress", "PHP", "jQuery", "Bootstrap", "MySQL"],
       github: "",
       live: "https://theindianroamer.com",
@@ -51,7 +51,7 @@ const Projects = () => {
     {
       title: "Cake Shop Website MERN Stack",
       description: "Custom Build MERN Stack Website for Cake Shop with admin pannel, order tracking, and payment integration.",
-      image: "/projects/cakeshop.png",
+      image: "/projects/mern/cakeshop.webp",
       technologies: ["ReactJs", "NodeJs", "MongoDB", "ExpressJs", "TailwindCSS", "ShadcnUI"],
       github: "https://github.com/BhaveshBishnoi/Cake-Shop-App-Using-MERN-Stack",
       live: "https://bhaveshbishnoi.com/hire-me",
@@ -94,7 +94,7 @@ const Projects = () => {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     priority={index < 2}
                     onError={(e) => {
-                      e.target.src = '/projects/default.png';
+                      e.target.src = '/projects/default.webp';
                       e.target.onError = null;
                     }}
                   />
