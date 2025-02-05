@@ -58,7 +58,7 @@ const Navbar = () => {
             onClick={(e) => handleClick(e, isHome ? '#home' : '/')}
           >
             <span className="bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
-              BB
+              Bhavesh Bishnoi
             </span>
           </Link>
 

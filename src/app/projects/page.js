@@ -15,13 +15,15 @@ const ProjectsPage = () => {
     { id: 'javascript', name: 'JavaScript Projects' },
     { id: 'nextjs', name: 'Next.js Projects' },
     { id: 'mern', name: 'MERN Stack Projects' },
+    { id: 'php', name: 'PHP Projects' },
   ];
+  
 
   const projects = [
     {
       title: "Portfolio Website",
       description: "A modern portfolio website built with Next.js, Tailwind CSS, and glass morphism design.",
-      image: "/projects/portfolio.png",
+      image: "/projects/nextjs/portfolio.webp",
       technologies: ["Next.js", "React", "Tailwind CSS", "Glass UI"],
       github: "https://github.com/BhaveshBishnoi/Portfolio-Bhavesh-Bishnoi",
       live: "https://bhaveshbishnoi.vercel.app",
@@ -30,7 +32,7 @@ const ProjectsPage = () => {
     {
       title: "JavaScript Projects Collection",
       description: "A collection of small JavaScript projects showcasing various web development concepts.",
-      image: "/projects/small-js-projects.png",
+      image: "/projects/javascript/small-js-projects.png",
       technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "TailwindCSS"],
       github: "https://github.com/BhaveshBishnoi/JavaScript-Small-Projects",
       category: "javascript"
@@ -38,7 +40,7 @@ const ProjectsPage = () => {
     {
       title: "Hindi Creator Blog",
       description: "A technology blog platform built for Hindi-speaking audience.",
-      image: "/projects/hindicreator.png",
+      image: "/projects/wordpress/hindicreator.webp",
       technologies: ["WordPress", "PHP", "MySQL", "SEO"],
       live: "https://hindicreator.com",
       category: "wordpress"
@@ -46,7 +48,7 @@ const ProjectsPage = () => {
     {
       title: "The Bagdi's E-commerce",
       description: "Custom WordPress theme and plugins development for E-commerce Website.",
-      image: "/projects/thebagdis.png",
+      image: "/projects/wordpress/thebagdis.webp",
       technologies: ["WordPress", "PHP", "jQuery", "Bootstrap"],
       live: "https://thebagdis.com",
       category: "wordpress"
@@ -54,20 +56,55 @@ const ProjectsPage = () => {
     {
       title: "The Indian Roamer",
       description: "Custom WordPress theme for The Indian Roamer Travel Website.",
-      image: "/projects/theindianroamer.png",
+      image: "/projects/wordpress/theindianroamer.webp",
       technologies: ["WordPress", "PHP", "jQuery", "Bootstrap"],
       live: "https://theindianroamer.com",
       category: "wordpress"
     },
     {
+        title: "Jankari Uttarakhand",
+        description: "Custom WordPress theme for Jankari Uttarakhand Website.",
+        image: "/projects/wordpress/jankariuttarakhand.webp",
+        technologies: ["WordPress", "PHP", "jQuery", "Bootstrap"],
+        live: "https://jankariuttarakhand.com",
+        category: "wordpress"
+      },
+      {
+        title: "TheBagdi's NextJs E-commerce Website",
+        description: "A modern E-commerce website built with Next.js, Tailwind CSS, order tracking and payments.",
+        image: "/projects/nextjs/thebagdis.webp",
+        technologies: ["Next.js", "PostgreSQL", "Tailwind CSS"],
+        github: "https://github.com/BhaveshBishnoi/TheBagdis-nextjs-project",
+        live: "https://thebagdis.vercel.app",
+        category: "nextjs"
+      },
+      {
+        title: "Shopper Inventory, Customers, Sales, Orders Manager Tool" ,
+        description: "Shopper Inventory, Customers, Sales, Orders Manager Tool built with PHP, MySQL, GST and payments.",
+        image: "/projects/php/shopper.webp",
+        technologies: ["PHP", "MySQL", "GST", "Payments"],
+        github: "",
+        live: "https://shopper.bhaveshbishnoi.com",
+        category: "php"
+      },
+    {
       title: "Cake Shop Website",
       description: "MERN Stack Website with admin panel, order tracking, and payments.",
-      image: "/projects/cakeshop.png",
+      image: "/projects/mern/cakeshop.webp",
       technologies: ["MERN Stack", "TailwindCSS", "ShadcnUI"],
       github: "https://github.com/BhaveshBishnoi/Cake-Shop-App-Using-MERN-Stack",
       live: "https://bhaveshbishnoi.com/hire-me",
       category: "mern"
-    }
+    },
+    {
+        title: "Kasutam Organic Ghee Website",
+        description: "MERN Stack Website with admin panel, order tracking, and payments.",
+        image: "/projects/mern/kasutam.webp",
+        technologies: ["MERN Stack", "TailwindCSS", "ShadcnUI"],
+        github: "",
+        live: "https://kasutam.com",
+        category: "mern"
+      }
   ];
 
   const filteredProjects = activeCategory === 'all' 
