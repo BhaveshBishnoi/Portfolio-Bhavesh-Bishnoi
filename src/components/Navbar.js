@@ -2,19 +2,22 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { IoMenu, IoClose } from "react-icons/io5";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === '/';
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Education', href: '#education' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: isHome ? '#home' : '/' },
+    { name: 'Skills', href: isHome ? '#skills' : '/#skills' },
+    { name: 'Projects', href: isHome ? '#projects' : '/projects' },
+    { name: 'Experience', href: isHome ? '#experience' : '/#experience' },
+    { name: 'Education', href: isHome ? '#education' : '/#education' },
+    { name: 'Contact', href: isHome ? '#contact' : '/#contact' },
   ];
 
   useEffect(() => {
@@ -24,6 +27,17 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleClick = (e, href) => {
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    setIsOpen(false);
+  };
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
@@ -38,7 +52,11 @@ const Navbar = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="#home" className="text-2xl font-bold text-white">
+          <Link 
+            href="/"
+            className="text-2xl font-bold text-white"
+            onClick={(e) => handleClick(e, isHome ? '#home' : '/')}
+          >
             <span className="bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
               BB
             </span>
@@ -50,6 +68,7 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 href={item.href}
+                onClick={(e) => handleClick(e, item.href)}
                 className="text-gray-300 hover:text-white transition-colors duration-300 text-sm font-medium"
               >
                 {item.name}
@@ -75,7 +94,7 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                onClick={() => setIsOpen(false)}
+                onClick={(e) => handleClick(e, item.href)}
                 className="block text-gray-300 hover:text-white transition-colors duration-300 text-sm font-medium"
               >
                 {item.name}
