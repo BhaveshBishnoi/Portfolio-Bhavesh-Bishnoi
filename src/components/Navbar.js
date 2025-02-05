@@ -45,7 +45,7 @@ const Navbar = () => {
     }`}>
       {/* Backdrop */}
       <div className={`absolute inset-0 transition-all duration-300 ${
-        isScrolled ? 'backdrop-blur-lg bg-gray-900/70' : 'backdrop-blur-none bg-transparent'
+        isScrolled || isOpen ? 'backdrop-blur-lg bg-gray-900/70' : 'backdrop-blur-sm bg-gray-900/30'
       }`}></div>
 
       {/* Content */}

@@ -112,16 +112,16 @@ const ProjectsPage = () => {
     : projects.filter(project => project.category === activeCategory);
 
   return (
-    <main className="min-h-screen py-16 px-4">
+    <main className="min-h-screen pt-24 pb-16 px-4">
       {/* Category Filters */}
-      <div className="max-w-7xl mx-auto mb-12">
-        <h1 className="text-4xl font-bold text-center text-white mb-8">My Projects</h1>
-        <div className="flex flex-wrap justify-center gap-4">
+      <div className="max-w-7xl mx-auto mb-8 md:mb-12">
+        <h1 className="text-4xl font-bold text-center text-white mb-6 md:mb-8">My Projects</h1>
+        <div className="flex flex-nowrap md:flex-wrap overflow-x-auto -mx-4 px-4 md:px-0 pb-4 md:pb-0 justify-start md:justify-center gap-3 md:gap-4 hide-scrollbar">
           {categories.map((category) => (
             <button
               key={category.id}
               onClick={() => setActiveCategory(category.id)}
-              className={`px-6 py-3 rounded-xl backdrop-blur-md border transition duration-300 ${
+              className={`px-4 md:px-6 py-2.5 md:py-3 text-sm md:text-base rounded-xl backdrop-blur-md border whitespace-nowrap transition duration-300 ${
                 activeCategory === category.id
                 ? 'bg-white/20 border-white/50 text-white'
                 : 'bg-white/10 border-white/30 text-gray-300 hover:bg-white/15'
@@ -133,9 +133,21 @@ const ProjectsPage = () => {
         </div>
       </div>
 
+      {/* Add custom scrollbar styles */}
+      <style jsx global>{`
+        .hide-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+          -webkit-overflow-scrolling: touch;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
+
       {/* Projects Grid */}
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {filteredProjects.map((project, index) => (
             <div
               key={index}
