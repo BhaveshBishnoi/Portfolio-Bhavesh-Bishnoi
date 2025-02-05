@@ -5,86 +5,108 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
-const Projects = () => {
+const ProjectsPage = () => {
+  const [activeCategory, setActiveCategory] = useState('all');
   const [hoveredIndex, setHoveredIndex] = useState(null);
+
+  const categories = [
+    { id: 'all', name: 'All Projects' },
+    { id: 'wordpress', name: 'WordPress Projects' },
+    { id: 'javascript', name: 'JavaScript Projects' },
+    { id: 'nextjs', name: 'Next.js Projects' },
+    { id: 'mern', name: 'MERN Stack Projects' },
+  ];
 
   const projects = [
     {
       title: "Portfolio Website",
-      description: "A modern portfolio website built with Next.js, Tailwind CSS, and glass morphism design. Features responsive design and smooth animations.",
+      description: "A modern portfolio website built with Next.js, Tailwind CSS, and glass morphism design.",
       image: "/projects/portfolio.png",
       technologies: ["Next.js", "React", "Tailwind CSS", "Glass UI"],
       github: "https://github.com/BhaveshBishnoi/Portfolio-Bhavesh-Bishnoi",
       live: "https://bhaveshbishnoi.vercel.app",
+      category: "nextjs"
     },
     {
       title: "JavaScript Projects Collection",
-      description: "A collection of small JavaScript projects showcasing various web development concepts and interactive features.",
+      description: "A collection of small JavaScript projects showcasing various web development concepts.",
       image: "/projects/small-js-projects.png",
       technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "TailwindCSS"],
       github: "https://github.com/BhaveshBishnoi/JavaScript-Small-Projects",
+      category: "javascript"
     },
     {
       title: "Hindi Creator Blog",
-      description: "A technology blog platform built for Hindi-speaking audience, featuring tech articles and tutorials.",
+      description: "A technology blog platform built for Hindi-speaking audience.",
       image: "/projects/hindicreator.png",
-      technologies: ["WordPress", "PHP", "MySQL", "SEO", "Content Management"],
-      github: "",
+      technologies: ["WordPress", "PHP", "MySQL", "SEO"],
       live: "https://hindicreator.com",
+      category: "wordpress"
     },
     {
-      title: "The Bagdi's E-commerce Website",
-      description: "Custom WordPress theme and plugins development for The Bagdi's E-commerce Website.",
+      title: "The Bagdi's E-commerce",
+      description: "Custom WordPress theme and plugins development for E-commerce Website.",
       image: "/projects/thebagdis.png",
-      technologies: ["WordPress", "PHP", "jQuery", "Bootstrap", "MySQL"],
-      github: "",
+      technologies: ["WordPress", "PHP", "jQuery", "Bootstrap"],
       live: "https://thebagdis.com",
+      category: "wordpress"
     },
     {
       title: "The Indian Roamer",
-      description: "Custom WordPress theme and plugins development for The Indian Roamer Travel Website.",
+      description: "Custom WordPress theme for The Indian Roamer Travel Website.",
       image: "/projects/theindianroamer.png",
-      technologies: ["WordPress", "PHP", "jQuery", "Bootstrap", "MySQL"],
-      github: "",
+      technologies: ["WordPress", "PHP", "jQuery", "Bootstrap"],
       live: "https://theindianroamer.com",
+      category: "wordpress"
     },
     {
-      title: "Cake Shop Website MERN Stack",
-      description: "Custom Build MERN Stack Website for Cake Shop with admin pannel, order tracking, and payment integration.",
+      title: "Cake Shop Website",
+      description: "MERN Stack Website with admin panel, order tracking, and payments.",
       image: "/projects/cakeshop.png",
-      technologies: ["ReactJs", "NodeJs", "MongoDB", "ExpressJs", "TailwindCSS", "ShadcnUI"],
+      technologies: ["MERN Stack", "TailwindCSS", "ShadcnUI"],
       github: "https://github.com/BhaveshBishnoi/Cake-Shop-App-Using-MERN-Stack",
       live: "https://bhaveshbishnoi.com/hire-me",
+      category: "mern"
     }
   ];
 
+  const filteredProjects = activeCategory === 'all' 
+    ? projects 
+    : projects.filter(project => project.category === activeCategory);
+
   return (
-    <>
-    <section id="projects" className="relative py-16 px-4 min-h-screen flex items-center">
-      {/* Animated Background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-l from-purple-500/30 to-blue-500/30 blur-3xl transform -rotate-12 animate-pulse"></div>
-        <div className="absolute -bottom-1/2 -left-1/2 w-full h-full bg-gradient-to-r from-pink-500/30 to-cyan-500/30 blur-3xl transform rotate-12 animate-pulse"></div>
+    <main className="min-h-screen py-16 px-4">
+      {/* Category Filters */}
+      <div className="max-w-7xl mx-auto mb-12">
+        <h1 className="text-4xl font-bold text-center text-white mb-8">My Projects</h1>
+        <div className="flex flex-wrap justify-center gap-4">
+          {categories.map((category) => (
+            <button
+              key={category.id}
+              onClick={() => setActiveCategory(category.id)}
+              className={`px-6 py-3 rounded-xl backdrop-blur-md border transition duration-300 ${
+                activeCategory === category.id
+                ? 'bg-white/20 border-white/50 text-white'
+                : 'bg-white/10 border-white/30 text-gray-300 hover:bg-white/15'
+              }`}
+            >
+              {category.name}
+            </button>
+          ))}
+        </div>
       </div>
 
-      {/* Content Container */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold text-center text-white mb-4">Projects</h2>
-        <p className="text-gray-300 text-center mb-12 max-w-2xl mx-auto">
-          Showcasing my latest work and technical expertise through real-world applications
-        </p>
-
+      {/* Projects Grid */}
+      <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <div
               key={index}
               className="group relative"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              {/* Project Card */}
               <div className="h-full backdrop-blur-xl bg-white/10 rounded-2xl border border-white/20 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
-                {/* Image Container */}
                 <div className="relative h-48 w-full overflow-hidden bg-gray-800">
                   <Image
                     src={project.image}
@@ -93,16 +115,10 @@ const Projects = () => {
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     priority={index < 2}
-                    onError={(e) => {
-                      e.target.src = '/projects/default.png';
-                      e.target.onError = null;
-                    }}
                   />
-                  {/* Overlay */}
                   <div className={`absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-60 transition-opacity duration-300 ${hoveredIndex === index ? 'opacity-80' : 'opacity-60'}`}></div>
                 </div>
 
-                {/* Content */}
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
                     {project.title}
@@ -111,7 +127,6 @@ const Projects = () => {
                     {project.description}
                   </p>
 
-                  {/* Technologies */}
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech, idx) => (
                       <span
@@ -123,7 +138,6 @@ const Projects = () => {
                     ))}
                   </div>
 
-                  {/* Links */}
                   <div className="flex gap-4">
                     {project.github && (
                       <Link
@@ -151,22 +165,9 @@ const Projects = () => {
             </div>
           ))}
         </div>
-        <div className="mt-8 text-center flex justify-center items-center">
-        
-    <Link href="/projects">
-      <button className="px-6 py-3 rounded-xl backdrop-blur-md bg-white/10 border border-white/30 text-white shadow-lg hover:bg-white/20 transition duration-300">
-        View More Projects
-      </button>
-    </Link>
-
-    
-  </div>
       </div>
-      
-    </section>
-    
-  </>
+    </main>
   );
 };
 
-export default Projects;
+export default ProjectsPage;
