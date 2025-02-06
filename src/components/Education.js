@@ -7,7 +7,7 @@ const Education = () => {
   const education = [
     {
       institution: "Dehradun Institute of Technology",
-      degree: "Masters ofComputer Applications",
+      degree: "Masters of Computer Applications",
       field: "Computer Engineering",
       duration: "2022 - 2024",
       location: "Dehradun, India",
@@ -40,9 +40,9 @@ const Education = () => {
   return (
     <section id="education" className="relative py-16 px-4 min-h-screen flex items-center">
       {/* Animated Background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-l from-indigo-500/30 to-purple-500/30 blur-3xl transform rotate-12 animate-pulse"></div>
-        <div className="absolute -bottom-1/2 -left-1/2 w-full h-full bg-gradient-to-r from-blue-500/30 to-cyan-500/30 blur-3xl transform -rotate-12 animate-pulse"></div>
+      <div className="absolute inset-0 overflow-hidden bg-gray-900">
+        <div className="absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-l from-indigo-900/30 to-purple-900/30 blur-3xl transform rotate-12 animate-pulse"></div>
+        <div className="absolute -bottom-1/2 -left-1/2 w-full h-full bg-gradient-to-r from-blue-900/30 to-cyan-900/30 blur-3xl transform -rotate-12 animate-pulse"></div>
       </div>
 
       {/* Content Container */}
@@ -56,7 +56,7 @@ const Education = () => {
           {education.map((edu, index) => (
             <div
               key={index}
-              className="group backdrop-blur-xl bg-white/10 rounded-2xl border border-white/20 p-6 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+              className="group backdrop-blur-xl bg-gray-800/40 rounded-2xl border border-gray-700/50 p-6 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
             >
               <div className="flex items-start gap-4">
                 <div className="relative w-16 h-16 rounded-lg overflow-hidden border border-white/20">
@@ -91,7 +91,7 @@ const Education = () => {
                   {edu.highlights.map((highlight, idx) => (
                     <span
                       key={idx}
-                      className="text-sm px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300"
+                      className="text-sm px-3 py-1 rounded-full bg-gray-800/50 border border-gray-700/50 text-gray-300"
                     >
                       {highlight}
                     </span>

@@ -62,9 +62,9 @@ const Projects = () => {
     <>
     <section id="projects" className="relative py-16 px-4 min-h-screen flex items-center">
       {/* Animated Background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-l from-purple-500/30 to-blue-500/30 blur-3xl transform -rotate-12 animate-pulse"></div>
-        <div className="absolute -bottom-1/2 -left-1/2 w-full h-full bg-gradient-to-r from-pink-500/30 to-cyan-500/30 blur-3xl transform rotate-12 animate-pulse"></div>
+      <div className="absolute inset-0 overflow-hidden bg-gray-900">
+        <div className="absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-l from-purple-900/30 to-blue-900/30 blur-3xl transform -rotate-12 animate-pulse"></div>
+        <div className="absolute -bottom-1/2 -left-1/2 w-full h-full bg-gradient-to-r from-pink-900/30 to-cyan-900/30 blur-3xl transform rotate-12 animate-pulse"></div>
       </div>
 
       {/* Content Container */}
@@ -83,9 +83,9 @@ const Projects = () => {
               onMouseLeave={() => setHoveredIndex(null)}
             >
               {/* Project Card */}
-              <div className="h-full backdrop-blur-xl bg-white/10 rounded-2xl border border-white/20 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+              <div className="h-full backdrop-blur-xl bg-gray-800/40 rounded-2xl border border-gray-700/50 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
                 {/* Image Container */}
-                <div className="relative h-48 w-full overflow-hidden bg-gray-800">
+                <div className="relative h-48 w-full overflow-hidden bg-gray-900">
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -99,7 +99,7 @@ const Projects = () => {
                     }}
                   />
                   {/* Overlay */}
-                  <div className={`absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-60 transition-opacity duration-300 ${hoveredIndex === index ? 'opacity-80' : 'opacity-60'}`}></div>
+                  <div className={`absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/70 to-transparent opacity-60 transition-opacity duration-300 ${hoveredIndex === index ? 'opacity-80' : 'opacity-60'}`}></div>
                 </div>
 
                 {/* Content */}
@@ -116,7 +116,7 @@ const Projects = () => {
                     {project.technologies.map((tech, idx) => (
                       <span
                         key={idx}
-                        className="text-xs px-2 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300"
+                        className="text-xs px-2 py-1 rounded-full bg-gray-800/50 border border-gray-700/50 text-gray-300"
                       >
                         {tech}
                       </span>
@@ -154,7 +154,7 @@ const Projects = () => {
         <div className="mt-8 text-center flex justify-center items-center">
         
     <Link href="/projects">
-      <button className="px-6 py-3 rounded-xl backdrop-blur-md bg-white/10 border border-white/30 text-white shadow-lg hover:bg-white/20 transition duration-300">
+      <button className="px-6 py-3 rounded-xl backdrop-blur-md bg-gray-800/40 border border-gray-700/50 text-white shadow-lg hover:bg-gray-700/50 transition duration-300">
         View More Projects
       </button>
     </Link>

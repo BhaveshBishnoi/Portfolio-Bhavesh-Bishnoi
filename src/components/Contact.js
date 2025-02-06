@@ -50,16 +50,16 @@ const Contact = () => {
   return (
     <section id="contact" className="relative py-16 px-4 min-h-screen flex items-center">
       {/* Animated Background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-r from-purple-500/30 to-pink-500/30 blur-3xl transform rotate-12 animate-pulse"></div>
-        <div className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-gradient-to-l from-blue-500/30 to-cyan-500/30 blur-3xl transform -rotate-12 animate-pulse"></div>
+      <div className="absolute inset-0 overflow-hidden bg-gray-900">
+        <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-r from-purple-900/30 to-pink-900/30 blur-3xl transform rotate-12 animate-pulse"></div>
+        <div className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-gradient-to-l from-blue-900/30 to-cyan-900/30 blur-3xl transform -rotate-12 animate-pulse"></div>
       </div>
 
       {/* Content Container */}
       <div className="relative z-10 w-full max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="backdrop-blur-xl bg-white/10 rounded-2xl border border-white/20 p-8 shadow-xl">
+          <div className="backdrop-blur-xl bg-gray-800/40 rounded-2xl border border-gray-700/50 p-8 shadow-xl">
             <h2 className="text-3xl font-bold text-white mb-6">Get in Touch</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
@@ -69,7 +69,7 @@ const Contact = () => {
                   placeholder="Your Name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:border-white/30 transition-colors"
+                  className="w-full px-4 py-3 rounded-xl bg-gray-900/50 border border-gray-700/50 text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 transition-colors"
                   required
                 />
               </div>
@@ -80,7 +80,7 @@ const Contact = () => {
                   placeholder="Your Email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:border-white/30 transition-colors"
+                  className="w-full px-4 py-3 rounded-xl bg-gray-900/50 border border-gray-700/50 text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 transition-colors"
                   required
                 />
               </div>
@@ -91,7 +91,7 @@ const Contact = () => {
                   placeholder="Subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:border-white/30 transition-colors"
+                  className="w-full px-4 py-3 rounded-xl bg-gray-900/50 border border-gray-700/50 text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 transition-colors"
                   required
                 />
               </div>
@@ -102,7 +102,7 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows="5"
-                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:border-white/30 transition-colors resize-none"
+                  className="w-full px-4 py-3 rounded-xl bg-gray-900/50 border border-gray-700/50 text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 transition-colors resize-none"
                   required
                 ></textarea>
               </div>
@@ -117,7 +117,7 @@ const Contact = () => {
 
           {/* Contact Info */}
           <div className="space-y-8">
-            <div className="backdrop-blur-xl bg-white/10 rounded-2xl border border-white/20 p-8 shadow-xl">
+            <div className="backdrop-blur-xl bg-gray-800/40 rounded-2xl border border-gray-700/50 p-8 shadow-xl">
               <h2 className="text-3xl font-bold text-white mb-6">Contact Information</h2>
               <div className="space-y-4">
                 <div className="flex items-center space-x-4 text-gray-300">
@@ -135,7 +135,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="backdrop-blur-xl bg-white/10 rounded-2xl border border-white/20 p-8 shadow-xl">
+            <div className="backdrop-blur-xl bg-gray-800/40 rounded-2xl border border-gray-700/50 p-8 shadow-xl">
               <h2 className="text-2xl font-bold text-white mb-6">Follow Me</h2>
               <div className="flex space-x-6">
                 {socialLinks.map((social, index) => (

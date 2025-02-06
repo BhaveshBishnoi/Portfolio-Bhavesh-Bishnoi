@@ -31,9 +31,9 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center py-16 px-4">
       {/* Animated Background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-r from-blue-500/30 to-purple-500/30 blur-3xl transform -rotate-12 animate-pulse"></div>
-        <div className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-gradient-to-l from-pink-500/30 to-cyan-500/30 blur-3xl transform rotate-12 animate-pulse"></div>
+      <div className="absolute inset-0 overflow-hidden bg-gray-900">
+        <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-r from-blue-900/30 to-purple-900/30 blur-3xl transform -rotate-12 animate-pulse"></div>
+        <div className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-gradient-to-l from-pink-900/30 to-cyan-900/30 blur-3xl transform rotate-12 animate-pulse"></div>
       </div>
 
       {/* Content Container */}
@@ -42,7 +42,7 @@ const Hero = () => {
           
           {/* Text Content */}
           <div className="flex-1 text-center lg:text-left">
-            <div className="backdrop-blur-xl bg-white/10 p-8 rounded-2xl border border-white/20 shadow-2xl">
+            <div className="backdrop-blur-xl bg-gray-800/40 p-8 rounded-2xl border border-gray-700/50 shadow-2xl">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
                 Hi, I&apos;m{' '}
                 <span className="bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
