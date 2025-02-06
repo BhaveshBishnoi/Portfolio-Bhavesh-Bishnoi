@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 
 const Skills = () => {
   const skills = [
@@ -52,7 +52,7 @@ const Skills = () => {
     },
     {
       name: "Tailwind CSS",
-      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
+      logo: "https://www.svgrepo.com/show/374118/tailwind.svg",
       color: "from-cyan-400/20 to-cyan-600/20 border-cyan-500/50",
     },
     {
@@ -84,9 +84,10 @@ const Skills = () => {
           Skills & Technologies
         </h2>
         <p className="text-gray-300 text-center mb-12 max-w-2xl mx-auto">
-          A collection of technologies and tools I work with to bring ideas to life
+          A collection of technologies and tools I work with to bring ideas to
+          life
         </p>
-        
+
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {skills.map(({ name, logo, color }) => (
             <div
@@ -98,7 +99,7 @@ const Skills = () => {
             >
               {/* Hover Effect */}
               <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              
+
               {/* Content */}
               <div className="relative flex flex-col items-center">
                 <div className="relative h-16 w-16 mb-4">
