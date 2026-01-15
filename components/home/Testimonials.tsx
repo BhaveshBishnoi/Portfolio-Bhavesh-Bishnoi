@@ -142,9 +142,8 @@ const Testimonials: React.FC = () => {
     return Array.from({ length: 5 }, (_, index) => (
       <FaStar
         key={index}
-        className={`${
-          index < rating ? "text-yellow-400" : "text-gray-600"
-        } text-sm`}
+        className={`${index < rating ? "text-yellow-400" : "text-gray-600"
+          } text-sm`}
       />
     ));
   };
@@ -152,7 +151,7 @@ const Testimonials: React.FC = () => {
   return (
     <section id="testimonials" className="relative py-20 px-4">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800">
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-950 to-gray-900">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(168,85,247,0.1),transparent_50%)]"></div>
       </div>
@@ -281,18 +280,16 @@ const Testimonials: React.FC = () => {
             <button
               key={testimonial.id}
               onClick={() => goToTestimonial(index)}
-              className={`flex-shrink-0 relative transition-all duration-300 ${
-                index === currentIndex
+              className={`flex-shrink-0 relative transition-all duration-300 ${index === currentIndex
                   ? "transform scale-110"
                   : "hover:transform hover:scale-105 opacity-60 hover:opacity-80"
-              }`}
+                }`}
             >
               <div
-                className={`w-16 h-16 rounded-full overflow-hidden border-3 ${
-                  index === currentIndex
+                className={`w-16 h-16 rounded-full overflow-hidden border-3 ${index === currentIndex
                     ? "border-blue-400 shadow-lg shadow-blue-400/25"
                     : "border-white/20"
-                }`}
+                  }`}
               >
                 <Image
                   src={testimonial.image}

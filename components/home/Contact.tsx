@@ -216,7 +216,7 @@ const Contact: React.FC = () => {
     } catch (error) {
       setSubmitStatus("error");
       console.log(error);
-      
+
     } finally {
       setIsSubmitting(false);
     }
@@ -225,7 +225,7 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className="relative py-20 px-4 min-h-screen">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-slate-900 to-gray-800">
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-950 to-gray-900">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(34,197,94,0.1),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1),transparent_50%)]"></div>
       </div>
@@ -245,7 +245,7 @@ const Contact: React.FC = () => {
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Ready to bring your project to life? Let&nbsp;s discuss your
             requirements and create something amazing together. I&nbsp;m
-            available for freelance projects and consultations.
+            available for new projects and consultations.
           </p>
         </motion.div>
 
@@ -494,11 +494,10 @@ const Contact: React.FC = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-semibold transition-all duration-300 ${
-                      isSubmitting
+                    className={`w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-semibold transition-all duration-300 ${isSubmitting
                         ? "bg-gray-600 cursor-not-allowed"
                         : "bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-lg hover:shadow-blue-500/25 hover:transform hover:-translate-y-1"
-                    } text-white`}
+                      } text-white`}
                   >
                     {isSubmitting ? (
                       <>

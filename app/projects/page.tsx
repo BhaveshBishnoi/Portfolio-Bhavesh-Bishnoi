@@ -698,15 +698,14 @@ const ProjectsPage: React.FC = () => {
     return Array.from({ length: 5 }, (_, index) => (
       <FaStar
         key={index}
-        className={`${
-          index < rating ? "text-yellow-400" : "text-gray-600"
-        } text-sm`}
+        className={`${index < rating ? "text-yellow-400" : "text-gray-600"
+          } text-sm`}
       />
     ));
   };
 
   return (
-    <main className="min-h-screen pt-24 pb-16 px-4 bg-gradient-to-br from-gray-900 via-slate-900 to-gray-800">
+    <main className="min-h-screen pt-24 pb-16 px-4 bg-gradient-to-br from-black via-gray-950 to-gray-900">
       {/* Background Effects */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]"></div>
@@ -741,11 +740,10 @@ const ProjectsPage: React.FC = () => {
             <button
               key={category.id}
               onClick={() => setActiveCategory(category.id)}
-              className={`group flex items-center gap-3 px-6 py-4 rounded-xl transition-all duration-300 ${
-                activeCategory === category.id
+              className={`group flex items-center gap-3 px-6 py-4 rounded-xl transition-all duration-300 ${activeCategory === category.id
                   ? "bg-blue-600 text-white shadow-lg shadow-blue-600/25"
                   : "bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white border border-white/10"
-              }`}
+                }`}
             >
               <span className="text-2xl">{category.icon}</span>
               <div className="text-left">
@@ -774,11 +772,10 @@ const ProjectsPage: React.FC = () => {
                   <button
                     key={project.id}
                     onClick={() => setSelectedProject(project.id)}
-                    className={`w-full text-left p-4 rounded-xl transition-all duration-300 ${
-                      selectedProject === project.id
+                    className={`w-full text-left p-4 rounded-xl transition-all duration-300 ${selectedProject === project.id
                         ? "bg-blue-600/20 border border-blue-500/30 shadow-lg"
                         : "bg-white/5 border border-white/10 hover:bg-white/10"
-                    }`}
+                      }`}
                   >
                     <div className="flex items-start gap-3">
                       <div className="relative w-12 h-12 rounded-lg overflow-hidden flex-shrink-0">
@@ -792,11 +789,10 @@ const ProjectsPage: React.FC = () => {
                       </div>
                       <div className="flex-1 min-w-0">
                         <h3
-                          className={`font-semibold text-sm mb-1 ${
-                            selectedProject === project.id
+                          className={`font-semibold text-sm mb-1 ${selectedProject === project.id
                               ? "text-blue-400"
                               : "text-white"
-                          }`}
+                            }`}
                         >
                           {project.title}
                         </h3>
@@ -805,13 +801,12 @@ const ProjectsPage: React.FC = () => {
                         </p>
                         <div className="flex items-center gap-2">
                           <span
-                            className={`text-xs px-2 py-1 rounded-full ${
-                              project.status === "completed"
+                            className={`text-xs px-2 py-1 rounded-full ${project.status === "completed"
                                 ? "bg-green-500/20 text-green-400"
                                 : project.status === "in-progress"
-                                ? "bg-blue-500/20 text-blue-400"
-                                : "bg-orange-500/20 text-orange-400"
-                            }`}
+                                  ? "bg-blue-500/20 text-blue-400"
+                                  : "bg-orange-500/20 text-orange-400"
+                              }`}
                           >
                             {project.status}
                           </span>
@@ -1197,9 +1192,9 @@ const ProjectsPage: React.FC = () => {
                               </div>
                               {index <
                                 selectedProjectData.timeline.phases.length -
-                                  1 && (
-                                <div className="absolute left-4 top-8 w-0.5 h-8 bg-gray-700"></div>
-                              )}
+                                1 && (
+                                  <div className="absolute left-4 top-8 w-0.5 h-8 bg-gray-700"></div>
+                                )}
                             </div>
                           )
                         )}
@@ -1221,9 +1216,8 @@ const ProjectsPage: React.FC = () => {
                               >
                                 <Image
                                   src={image}
-                                  alt={`${
-                                    selectedProjectData.title
-                                  } screenshot ${index + 1}`}
+                                  alt={`${selectedProjectData.title
+                                    } screenshot ${index + 1}`}
                                   fill
                                   className="object-cover hover:scale-105 transition-transform duration-300"
                                   sizes="(max-width: 768px) 100vw, 50vw"

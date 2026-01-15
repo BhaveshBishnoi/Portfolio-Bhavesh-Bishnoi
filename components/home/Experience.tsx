@@ -225,7 +225,7 @@ const Experience: React.FC = () => {
   return (
     <section id="experience" className="relative py-20 px-4 min-h-screen">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-slate-900 to-gray-800">
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-950 to-gray-900">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(59,130,246,0.1),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_80%,rgba(168,85,247,0.1),transparent_50%)]"></div>
       </div>
@@ -292,20 +292,18 @@ const Experience: React.FC = () => {
                   key={exp.id}
                   variants={itemVariants}
                   onClick={() => setSelectedExperience(exp.id)}
-                  className={`w-full text-left p-4 rounded-xl transition-all duration-300 ${
-                    selectedExperience === exp.id
+                  className={`w-full text-left p-4 rounded-xl transition-all duration-300 ${selectedExperience === exp.id
                       ? "bg-blue-600/20 border border-blue-500/30 shadow-lg"
                       : "bg-white/5 border border-white/10 hover:bg-white/10"
-                  }`}
+                    }`}
                 >
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <h4
-                        className={`font-semibold ${
-                          selectedExperience === exp.id
+                        className={`font-semibold ${selectedExperience === exp.id
                             ? "text-blue-400"
                             : "text-white"
-                        }`}
+                          }`}
                       >
                         {exp.role}
                       </h4>
@@ -370,19 +368,18 @@ const Experience: React.FC = () => {
                       <span>{selectedExp.duration}</span>
                     </div>
                     <span
-                      className={`px-3 py-1 rounded-full text-xs font-medium ${
-                        selectedExp.type === "freelance"
+                      className={`px-3 py-1 rounded-full text-xs font-medium ${selectedExp.type === "freelance"
                           ? "bg-green-500/20 text-green-400 border border-green-500/30"
                           : selectedExp.type === "employment"
-                          ? "bg-blue-500/20 text-blue-400 border border-blue-500/30"
-                          : "bg-purple-500/20 text-purple-400 border border-purple-500/30"
-                      }`}
+                            ? "bg-blue-500/20 text-blue-400 border border-blue-500/30"
+                            : "bg-purple-500/20 text-purple-400 border border-purple-500/30"
+                        }`}
                     >
                       {selectedExp.type === "freelance"
-                        ? "Freelance"
+                        ? "Independent"
                         : selectedExp.type === "employment"
-                        ? "Employment"
-                        : "Project"}
+                          ? "Employment"
+                          : "Project"}
                     </span>
                   </div>
 
