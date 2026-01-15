@@ -392,34 +392,6 @@ const Projects: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* Stats */}
-        <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          {[
-            { label: "Projects", value: "50+", icon: FaCode },
-            { label: "Happy Clients", value: "30+", icon: FaUsers },
-            { label: "Revenue Generated", value: "$10K+", icon: FaDollarSign },
-            { label: "Total Users", value: "100K+", icon: FaEye },
-          ].map((stat, index) => (
-            <div
-              key={index}
-              className="text-center p-6 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10"
-            >
-              <div className="flex justify-center mb-3">
-                <stat.icon className="text-3xl text-gray-300" />
-              </div>
-              <div className="text-3xl font-bold text-white mb-1">
-                {stat.value}
-              </div>
-              <div className="text-sm text-gray-400">{stat.label}</div>
-            </div>
-          ))}
-        </motion.div>
 
         {/* Category Filter */}
         <motion.div
