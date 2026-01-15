@@ -191,14 +191,6 @@ const Hero: React.FC = () => {
                     <FaRocket className="group-hover:translate-x-1 transition-transform duration-300" />
                   </span>
                 </Link>
-
-                <Link
-                  href="#projects"
-                  className="px-8 py-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 text-white font-semibold hover:bg-white/10 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-                >
-                  View Portfolio
-                </Link>
-
                 <a
                   href="/resume.pdf"
                   download
