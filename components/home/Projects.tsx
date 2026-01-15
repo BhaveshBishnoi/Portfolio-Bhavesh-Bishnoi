@@ -368,9 +368,9 @@ const Projects: React.FC = () => {
   return (
     <section id="projects" className="relative py-20 px-4 min-h-screen">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-950 to-gray-900">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_20%,rgba(168,85,247,0.1),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_60%_80%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-black">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_20%,rgba(100,100,100,0.05),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_60%_80%,rgba(255,255,255,0.03),transparent_50%)]"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -411,7 +411,7 @@ const Projects: React.FC = () => {
               className="text-center p-6 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10"
             >
               <div className="flex justify-center mb-3">
-                <stat.icon className="text-3xl text-blue-400" />
+                <stat.icon className="text-3xl text-gray-300" />
               </div>
               <div className="text-3xl font-bold text-white mb-1">
                 {stat.value}
@@ -434,8 +434,8 @@ const Projects: React.FC = () => {
               key={category.id}
               onClick={() => setActiveCategory(category.id)}
               className={`flex items-center gap-2 px-6 py-3 rounded-xl transition-all duration-300 ${activeCategory === category.id
-                  ? "bg-blue-600 text-white shadow-lg shadow-blue-600/25"
-                  : "bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white border border-white/10"
+                ? "bg-gray-800 text-white shadow-lg shadow-gray-800/25"
+                : "bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white border border-white/10"
                 }`}
             >
               <span className="text-lg">{category.icon}</span>
@@ -475,10 +475,10 @@ const Projects: React.FC = () => {
               <div className="absolute top-4 right-4 z-10">
                 <span
                   className={`text-xs px-3 py-1 rounded-full border ${project.status === "completed"
-                      ? "bg-green-500/20 text-green-400 border-green-500/30"
-                      : project.status === "in-progress"
-                        ? "bg-blue-500/20 text-blue-400 border-blue-500/30"
-                        : "bg-orange-500/20 text-orange-400 border-orange-500/30"
+                    ? "bg-green-500/20 text-green-400 border-green-500/30"
+                    : project.status === "in-progress"
+                      ? "bg-gray-700/20 text-gray-300 border-gray-600/30"
+                      : "bg-orange-500/20 text-orange-400 border-orange-500/30"
                     }`}
                 >
                   {project.status === "completed"
@@ -503,7 +503,7 @@ const Projects: React.FC = () => {
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-gray-300 transition-colors">
                   {project.title}
                 </h3>
                 <p className="text-gray-300 text-sm mb-4 line-clamp-2">
@@ -514,7 +514,7 @@ const Projects: React.FC = () => {
                 {Object.keys(project.metrics).length > 0 && (
                   <div className="flex flex-wrap gap-4 mb-4 text-xs">
                     {project.metrics.users && (
-                      <div className="flex items-center gap-1 text-blue-400">
+                      <div className="flex items-center gap-1 text-gray-300">
                         <FaUsers />
                         <span>{project.metrics.users} users</span>
                       </div>
@@ -526,7 +526,7 @@ const Projects: React.FC = () => {
                       </div>
                     )}
                     {project.metrics.views && (
-                      <div className="flex items-center gap-1 text-purple-400">
+                      <div className="flex items-center gap-1 text-gray-400">
                         <FaEye />
                         <span>{project.metrics.views} views</span>
                       </div>
@@ -589,7 +589,7 @@ const Projects: React.FC = () => {
                         selectedProject === project.id ? null : project.id
                       )
                     }
-                    className="text-blue-400 hover:text-white text-sm font-medium transition-colors"
+                    className="text-gray-300 hover:text-white text-sm font-medium transition-colors"
                   >
                     {selectedProject === project.id ? "Less Info" : "More Info"}
                   </button>
@@ -631,7 +631,7 @@ const Projects: React.FC = () => {
                         {project.technologies.map((tech, idx) => (
                           <span
                             key={idx}
-                            className="text-xs px-2 py-1 bg-blue-500/20 text-blue-400 rounded-full border border-blue-500/30"
+                            className="text-xs px-2 py-1 bg-gray-700/20 text-gray-300 rounded-full border border-gray-600/30"
                           >
                             {tech}
                           </span>
@@ -666,7 +666,7 @@ const Projects: React.FC = () => {
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
                 href="#contact"
-                className="flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 group"
+                className="flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-gray-700 to-gray-900 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 group"
               >
                 <FaRocket className="group-hover:translate-x-1 transition-transform duration-300" />
                 Start Your Project

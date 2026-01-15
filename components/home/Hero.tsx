@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
       name: "LinkedIn",
       url: "https://linkedin.com/in/bhaveshbishnoi",
       icon: FaLinkedin,
-      color: "hover:text-blue-400 hover:scale-110",
+      color: "hover:text-gray-300 hover:scale-110",
     },
     {
       name: "Twitter",
@@ -106,9 +106,9 @@ const Hero: React.FC = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center py-20 px-4 overflow-hidden">
       {/* Enhanced Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-950 to-gray-900">
+      <div className="absolute inset-0 bg-black">
         <div className="absolute inset-0">
-          <div className="absolute top-0 -left-4 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+          <div className="absolute top-0 -left-4 w-72 h-72 bg-gray-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
           <div className="absolute top-0 -right-4 w-72 h-72 bg-yellow-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
           <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
         </div>
@@ -162,7 +162,7 @@ const Hero: React.FC = () => {
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-200">
                   Full Stack Developer
                 </h2>
-                <p className="text-lg md:text-xl text-blue-400 font-medium">
+                <p className="text-lg md:text-xl text-gray-300 font-medium">
                   Professional Web Developer & Tech Consultant
                 </p>
               </motion.div>
@@ -208,24 +208,6 @@ const Hero: React.FC = () => {
                   Download CV
                 </a>
               </motion.div>
-
-              {/* Stats */}
-              <motion.div
-                className="grid grid-cols-3 gap-6 pt-8 max-w-md mx-auto lg:mx-0"
-                variants={itemVariants}
-              >
-                {stats.map((stat, index) => (
-                  <div key={index} className="text-center">
-                    <div className="flex justify-center mb-2">
-                      <stat.icon className="text-2xl text-blue-400" />
-                    </div>
-                    <div className="text-2xl font-bold text-white">
-                      {stat.number}
-                    </div>
-                    <div className="text-sm text-gray-400">{stat.label}</div>
-                  </div>
-                ))}
-              </motion.div>
             </div>
 
             {/* Social Links */}
@@ -259,10 +241,10 @@ const Hero: React.FC = () => {
           <motion.div className="relative" variants={itemVariants}>
             <div className="relative w-80 h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px]">
               {/* Animated Background Ring */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full blur-2xl opacity-40 animate-pulse"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-gray-500 via-gray-600 to-gray-700 rounded-full blur-2xl opacity-40 animate-pulse"></div>
 
               {/* Outer Ring */}
-              <div className="absolute inset-4 bg-gradient-to-r from-blue-400 to-purple-600 rounded-full p-1 animate-spin-slow">
+              <div className="absolute inset-4 bg-gradient-to-r from-gray-600 to-gray-800 rounded-full p-1 animate-spin-slow">
                 <div className="w-full h-full bg-gray-900 rounded-full"></div>
               </div>
 
@@ -282,12 +264,12 @@ const Hero: React.FC = () => {
               </div>
 
               {/* Floating Elements */}
-              <div className="absolute top-4 right-4 w-16 h-16 bg-blue-500/20 rounded-full backdrop-blur-sm border border-blue-400/30 flex items-center justify-center animate-bounce">
-                <FaCode className="text-blue-400 text-xl" />
+              <div className="absolute top-4 right-4 w-16 h-16 bg-gray-700/20 rounded-full backdrop-blur-sm border border-gray-600/30 flex items-center justify-center animate-bounce">
+                <FaCode className="text-gray-300 text-xl" />
               </div>
 
-              <div className="absolute bottom-8 left-4 w-12 h-12 bg-purple-500/20 rounded-full backdrop-blur-sm border border-purple-400/30 flex items-center justify-center animate-pulse">
-                <FaRocket className="text-purple-400" />
+              <div className="absolute bottom-8 left-4 w-12 h-12 bg-gray-600/20 rounded-full backdrop-blur-sm border border-gray-500/30 flex items-center justify-center animate-pulse">
+                <FaRocket className="text-gray-400" />
               </div>
             </div>
           </motion.div>

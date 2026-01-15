@@ -166,9 +166,9 @@ const Education: React.FC = () => {
   return (
     <section id="education" className="relative py-20 px-4 min-h-screen">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-950 to-gray-900">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(34,197,94,0.1),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-black">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.03),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(255,255,255,0.03),transparent_50%)]"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -199,7 +199,7 @@ const Education: React.FC = () => {
           viewport={{ once: true }}
         >
           <h3 className="text-3xl font-bold text-white text-center mb-12 flex items-center justify-center gap-3">
-            <FaGraduationCap className="text-blue-400" />
+            <FaGraduationCap className="text-gray-300" />
             Academic Qualifications
           </h3>
 
@@ -229,10 +229,10 @@ const Education: React.FC = () => {
                           />
                         </div>
                         <div className="flex-1">
-                          <h4 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors mb-1">
+                          <h4 className="text-xl font-bold text-white group-hover:text-gray-300 transition-colors mb-1">
                             {edu.institution}
                           </h4>
-                          <p className="text-blue-400 font-semibold text-lg">
+                          <p className="text-gray-300 font-semibold text-lg">
                             {edu.degree}
                           </p>
                           <p className="text-gray-300">{edu.field}</p>
@@ -252,11 +252,11 @@ const Education: React.FC = () => {
                       {/* Details */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                         <div className="flex items-center gap-2 text-gray-400">
-                          <FaCalendarAlt className="text-blue-400" />
+                          <FaCalendarAlt className="text-gray-300" />
                           <span>{edu.duration}</span>
                         </div>
                         <div className="flex items-center gap-2 text-gray-400">
-                          <FaMapMarkerAlt className="text-blue-400" />
+                          <FaMapMarkerAlt className="text-gray-300" />
                           <span>{edu.location}</span>
                         </div>
                         <div className="flex items-center gap-2 text-gray-400">
@@ -268,8 +268,8 @@ const Education: React.FC = () => {
                         <div className="flex items-center gap-2">
                           <span
                             className={`px-3 py-1 rounded-full text-xs font-medium ${edu.type === "masters"
-                                ? "bg-purple-500/20 text-purple-400 border border-purple-500/30"
-                                : "bg-blue-500/20 text-blue-400 border border-blue-500/30"
+                              ? "bg-gray-600/20 text-gray-400 border border-gray-500/30"
+                              : "bg-gray-700/20 text-gray-300 border border-gray-700/30"
                               }`}
                           >
                             {edu.type === "masters"
@@ -328,7 +328,7 @@ const Education: React.FC = () => {
                   >
                     <div className="bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 p-8">
                       <h5 className="text-white font-semibold mb-6 flex items-center gap-2">
-                        <FaBook className="text-blue-400" />
+                        <FaBook className="text-gray-300" />
                         Key Subjects
                       </h5>
                       <div className="grid grid-cols-1 gap-3">
@@ -337,7 +337,7 @@ const Education: React.FC = () => {
                             key={idx}
                             className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10"
                           >
-                            <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                            <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
                             <span className="text-gray-300 text-sm">
                               {subject}
                             </span>
@@ -385,7 +385,7 @@ const Education: React.FC = () => {
                     />
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-white font-semibold text-sm group-hover:text-blue-400 transition-colors">
+                    <h4 className="text-white font-semibold text-sm group-hover:text-gray-300 transition-colors">
                       {cert.name}
                     </h4>
                     <p className="text-gray-400 text-xs">{cert.issuer}</p>
