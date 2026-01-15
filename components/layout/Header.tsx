@@ -8,13 +8,13 @@ import {
   IoMenu,
   IoClose,
   IoHome,
-  IoPersonOutline,
   IoBriefcaseOutline,
   IoCodeSlashOutline,
   IoSchoolOutline,
   IoMailOutline,
-  IoStarOutline,
   IoAppsOutline,
+  IoFolderOutline,
+  IoStatsChartOutline,
 } from "react-icons/io5";
 
 interface NavItem {
@@ -34,14 +34,14 @@ const Header: React.FC = () => {
     () => [
       { name: "Home", href: isHome ? "#home" : "/", icon: IoHome },
       {
-        name: "Services",
-        href: isHome ? "#services" : "/#services",
-        icon: IoAppsOutline,
-      },
-      {
         name: "Skills",
         href: isHome ? "#skills" : "/#skills",
         icon: IoCodeSlashOutline,
+      },
+      {
+        name: "Services",
+        href: isHome ? "#services" : "/#services",
+        icon: IoAppsOutline,
       },
       {
         name: "Experience",
@@ -56,12 +56,7 @@ const Header: React.FC = () => {
       {
         name: "Projects",
         href: isHome ? "#projects" : "/projects",
-        icon: IoPersonOutline,
-      },
-      {
-        name: "Testimonials",
-        href: isHome ? "#testimonials" : "/#testimonials",
-        icon: IoStarOutline,
+        icon: IoFolderOutline,
       },
       {
         name: "Contact",
@@ -157,20 +152,18 @@ const Header: React.FC = () => {
 
   return (
     <motion.nav
-      className={`fixed w-full z-50 transition-all duration-500 ${
-        isScrolled ? "py-2" : "py-4"
-      }`}
+      className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? "py-2" : "py-4"
+        }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
     >
       {/* Backdrop */}
       <div
-        className={`absolute inset-0 transition-all duration-500 ${
-          isScrolled || isOpen
-            ? "backdrop-blur-xl bg-gray-900/80 border-b border-white/10"
-            : "backdrop-blur-sm bg-gray-900/40"
-        }`}
+        className={`absolute inset-0 transition-all duration-500 ${isScrolled || isOpen
+            ? "backdrop-blur-xl bg-black/90 border-b border-white/10 shadow-lg"
+            : "backdrop-blur-md bg-black/70 border-b border-white/5"
+          }`}
       />
 
       {/* Content */}
@@ -185,18 +178,21 @@ const Header: React.FC = () => {
             <Link
               href="/"
               onClick={(e) => handleClick(e, isHome ? "#home" : "/")}
-              className="text-2xl font-bold text-white hover:text-blue-400 transition-colors duration-300"
+              className="text-2xl font-bold text-white hover:text-gray-300 transition-colors duration-300 flex items-center gap-2"
             >
-              <span className="bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
-                Bhavesh
-              </span>
-              <span className="text-white ml-1">Bishnoi</span>
+              <div className="p-2 bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg">
+                <IoStatsChartOutline className="text-white text-xl" />
+              </div>
+              <div>
+                <span className="text-white">Bhavesh</span>
+                <span className="text-gray-400 ml-1">Bishnoi</span>
+              </div>
             </Link>
           </motion.div>
 
           {/* Desktop Navigation */}
           <motion.div
-            className="hidden lg:flex items-center space-x-1"
+            className="hidden lg:flex items-center gap-2"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -212,23 +208,23 @@ const Header: React.FC = () => {
                   key={item.name}
                   href={item.href}
                   onClick={(e) => handleClick(e, item.href)}
-                  className={`relative flex items-center gap-2 px-4 py-2 rounded-xl transition-all duration-300 group ${
-                    isActive
-                      ? "text-blue-400 bg-blue-500/10"
-                      : "text-gray-300 hover:text-white hover:bg-white/5"
-                  }`}
+                  className={`relative flex items-center gap-2 px-4 py-2.5 rounded-xl transition-all duration-300 group ${isActive
+                      ? "text-white bg-gray-800/50 shadow-lg shadow-gray-900/20"
+                      : "text-gray-400 hover:text-white hover:bg-white/5"
+                    }`}
                 >
                   <item.icon
-                    className={`text-lg transition-transform duration-300 group-hover:scale-110 ${
-                      isActive ? "text-blue-400" : ""
-                    }`}
+                    className={`text-lg transition-all duration-300 ${isActive
+                        ? "text-white scale-110"
+                        : "group-hover:scale-110"
+                      }`}
                   />
                   <span className="text-sm font-medium">{item.name}</span>
 
                   {/* Active Indicator */}
                   {isActive && (
                     <motion.div
-                      className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-blue-400 rounded-full"
+                      className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent rounded-full"
                       layoutId="activeIndicator"
                       transition={{ duration: 0.3 }}
                     />
@@ -248,15 +244,16 @@ const Header: React.FC = () => {
             <Link
               href="#contact"
               onClick={(e) => handleClick(e, "#contact")}
-              className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:-translate-y-1"
+              className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gray-700 to-gray-900 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-gray-700/30 transition-all duration-300 transform hover:-translate-y-0.5 border border-gray-600/30"
             >
-              Hire Me
+              <IoMailOutline className="text-lg" />
+              <span>Get In Touch</span>
             </Link>
           </motion.div>
 
           {/* Mobile Menu Button */}
           <motion.button
-            className="lg:hidden relative z-20 p-2 text-white hover:text-blue-400 transition-colors duration-300"
+            className="lg:hidden relative z-20 p-2 text-white hover:text-gray-300 transition-colors duration-300"
             onClick={toggleMenu}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -311,16 +308,14 @@ const Header: React.FC = () => {
                       <Link
                         href={item.href}
                         onClick={(e) => handleClick(e, item.href)}
-                        className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 ${
-                          isActive
-                            ? "text-blue-400 bg-blue-500/10 border border-blue-500/20"
-                            : "text-gray-300 hover:text-white hover:bg-white/5"
-                        }`}
+                        className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 ${isActive
+                            ? "text-white bg-gray-800/50 border border-gray-700/50 shadow-lg"
+                            : "text-gray-400 hover:text-white hover:bg-white/5"
+                          }`}
                       >
                         <item.icon
-                          className={`text-xl ${
-                            isActive ? "text-blue-400" : ""
-                          }`}
+                          className={`text-xl ${isActive ? "text-white" : ""
+                            }`}
                         />
                         <span className="font-medium">{item.name}</span>
                       </Link>
@@ -333,7 +328,7 @@ const Header: React.FC = () => {
                   <Link
                     href="#contact"
                     onClick={(e) => handleClick(e, "#contact")}
-                    className="flex items-center justify-center gap-2 w-full px-6 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
+                    className="flex items-center justify-center gap-2 w-full px-6 py-4 bg-gradient-to-r from-gray-700 to-gray-900 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-gray-700/30 transition-all duration-300 border border-gray-600/30"
                   >
                     <IoMailOutline className="text-xl" />
                     Get In Touch
