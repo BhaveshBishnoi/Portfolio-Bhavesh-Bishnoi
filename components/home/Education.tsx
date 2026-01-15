@@ -166,7 +166,7 @@ const Education: React.FC = () => {
   return (
     <section id="education" className="relative py-20 px-4 min-h-screen">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800">
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-950 to-gray-900">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(34,197,94,0.1),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(59,130,246,0.1),transparent_50%)]"></div>
       </div>
@@ -213,9 +213,8 @@ const Education: React.FC = () => {
                 <div className="grid lg:grid-cols-2 gap-8 items-start">
                   {/* Education Card */}
                   <div
-                    className={`${
-                      index % 2 === 0 ? "lg:order-1" : "lg:order-2"
-                    }`}
+                    className={`${index % 2 === 0 ? "lg:order-1" : "lg:order-2"
+                      }`}
                   >
                     <div className="bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 p-8 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:transform hover:-translate-y-1">
                       {/* Header */}
@@ -268,11 +267,10 @@ const Education: React.FC = () => {
                         </div>
                         <div className="flex items-center gap-2">
                           <span
-                            className={`px-3 py-1 rounded-full text-xs font-medium ${
-                              edu.type === "masters"
+                            className={`px-3 py-1 rounded-full text-xs font-medium ${edu.type === "masters"
                                 ? "bg-purple-500/20 text-purple-400 border border-purple-500/30"
                                 : "bg-blue-500/20 text-blue-400 border border-blue-500/30"
-                            }`}
+                              }`}
                           >
                             {edu.type === "masters"
                               ? "Master's Degree"
@@ -325,9 +323,8 @@ const Education: React.FC = () => {
 
                   {/* Subjects List */}
                   <div
-                    className={`${
-                      index % 2 === 0 ? "lg:order-2" : "lg:order-1"
-                    }`}
+                    className={`${index % 2 === 0 ? "lg:order-2" : "lg:order-1"
+                      }`}
                   >
                     <div className="bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 p-8">
                       <h5 className="text-white font-semibold mb-6 flex items-center gap-2">

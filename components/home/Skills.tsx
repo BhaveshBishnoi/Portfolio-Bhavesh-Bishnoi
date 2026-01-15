@@ -290,7 +290,7 @@ const Skills: React.FC = () => {
   return (
     <section id="skills" className="relative py-20 px-4 min-h-screen">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800">
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-950 to-gray-900">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(120,119,198,0.1),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(255,119,198,0.1),transparent_50%)]"></div>
       </div>
@@ -326,11 +326,10 @@ const Skills: React.FC = () => {
             <button
               key={category.id}
               onClick={() => setActiveCategory(category.id)}
-              className={`group flex items-center gap-3 px-6 py-4 rounded-xl transition-all duration-300 ${
-                activeCategory === category.id
+              className={`group flex items-center gap-3 px-6 py-4 rounded-xl transition-all duration-300 ${activeCategory === category.id
                   ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg shadow-blue-500/25"
                   : "bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white border border-white/10"
-              }`}
+                }`}
             >
               <span className="text-2xl">{category.icon}</span>
               <div className="text-left">

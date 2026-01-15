@@ -12,7 +12,6 @@ import {
   FaWordpress,
   FaCheckCircle,
   FaClock,
-  FaDollarSign,
   FaArrowRight,
 } from "react-icons/fa";
 
@@ -22,18 +21,9 @@ interface Service {
   description: string;
   icon: React.ComponentType<{ className?: string }>;
   features: string[];
-  startingPrice: string;
   deliveryTime: string;
   technologies: string[];
   popular?: boolean;
-}
-
-interface Package {
-  name: string;
-  price: string;
-  features: string[];
-  deliveryTime: string;
-  revisions: string;
 }
 
 const Services: React.FC = () => {
@@ -57,7 +47,6 @@ const Services: React.FC = () => {
         "SEO optimization",
         "Performance optimization",
       ],
-      startingPrice: "$299",
       deliveryTime: "7-14 days",
       technologies: ["React", "Next.js", "Node.js", "MongoDB", "PostgreSQL"],
       popular: true,
@@ -78,7 +67,6 @@ const Services: React.FC = () => {
         "Admin panel with analytics",
         "Mobile-responsive design",
       ],
-      startingPrice: "$499",
       deliveryTime: "10-21 days",
       technologies: ["Next.js", "Stripe", "MongoDB", "Tailwind CSS"],
     },
@@ -98,7 +86,6 @@ const Services: React.FC = () => {
         "Security implementation",
         "Maintenance and updates",
       ],
-      startingPrice: "$199",
       deliveryTime: "5-10 days",
       technologies: ["WordPress", "PHP", "MySQL", "JavaScript"],
     },
@@ -118,7 +105,6 @@ const Services: React.FC = () => {
         "App-like user experience",
         "Device optimization",
       ],
-      startingPrice: "$149",
       deliveryTime: "3-7 days",
       technologies: ["HTML5", "CSS3", "JavaScript", "PWA"],
     },
@@ -138,7 +124,6 @@ const Services: React.FC = () => {
         "XML sitemap creation",
         "Google Analytics setup",
       ],
-      startingPrice: "$99",
       deliveryTime: "2-5 days",
       technologies: [
         "Google Analytics",
@@ -162,57 +147,10 @@ const Services: React.FC = () => {
         "24/7 technical support",
         "Monthly reports",
       ],
-      startingPrice: "$49/month",
       deliveryTime: "Ongoing",
       technologies: ["Various based on website"],
     },
   ];
-
-  const packages: Record<string, Package[]> = {
-    "web-development": [
-      {
-        name: "Basic",
-        price: "$299",
-        features: [
-          "Single page application",
-          "Responsive design",
-          "Basic SEO setup",
-          "Contact form",
-          "3 revisions",
-        ],
-        deliveryTime: "7 days",
-        revisions: "3",
-      },
-      {
-        name: "Standard",
-        price: "$599",
-        features: [
-          "Multi-page application",
-          "Database integration",
-          "Admin dashboard",
-          "Payment integration",
-          "Advanced SEO",
-          "5 revisions",
-        ],
-        deliveryTime: "14 days",
-        revisions: "5",
-      },
-      {
-        name: "Premium",
-        price: "$999",
-        features: [
-          "Full-stack application",
-          "Custom features",
-          "API development",
-          "Advanced analytics",
-          "Performance optimization",
-          "Unlimited revisions",
-        ],
-        deliveryTime: "21 days",
-        revisions: "Unlimited",
-      },
-    ],
-  };
 
   const selectedServiceData = services.find(
     (service) => service.id === selectedService
@@ -221,9 +159,9 @@ const Services: React.FC = () => {
   return (
     <section id="services" className="relative py-20 px-4 min-h-screen">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-slate-900 to-gray-800">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.1),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-black">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.05),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(100,100,100,0.05),transparent_50%)]"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -236,7 +174,7 @@ const Services: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Freelance Services
+            Professional Services
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Professional web development services to help your business grow
@@ -257,11 +195,10 @@ const Services: React.FC = () => {
             <button
               key={service.id}
               onClick={() => setSelectedService(service.id)}
-              className={`flex items-center gap-2 px-6 py-3 rounded-xl transition-all duration-300 ${
-                selectedService === service.id
-                  ? "bg-blue-600 text-white shadow-lg shadow-blue-600/25"
+              className={`flex items-center gap-2 px-6 py-3 rounded-xl transition-all duration-300 ${selectedService === service.id
+                  ? "bg-gray-800 text-white shadow-lg shadow-gray-800/25"
                   : "bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white"
-              }`}
+                }`}
             >
               <service.icon className="text-lg" />
               <span className="hidden sm:inline">{service.title}</span>
@@ -281,8 +218,8 @@ const Services: React.FC = () => {
             {/* Service Info */}
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <div className="p-4 bg-blue-600/20 rounded-xl border border-blue-500/30">
-                  <selectedServiceData.icon className="text-3xl text-blue-400" />
+                <div className="p-4 bg-gray-800/50 rounded-xl border border-gray-700/30">
+                  <selectedServiceData.icon className="text-3xl text-gray-300" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-white">
@@ -300,25 +237,18 @@ const Services: React.FC = () => {
                 {selectedServiceData.description}
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="text-center p-4 bg-white/5 rounded-xl border border-white/10">
-                  <FaDollarSign className="text-green-400 text-xl mx-auto mb-2" />
-                  <div className="text-white font-semibold">Starting at</div>
-                  <div className="text-green-400 font-bold text-xl">
-                    {selectedServiceData.startingPrice}
-                  </div>
-                </div>
-                <div className="text-center p-4 bg-white/5 rounded-xl border border-white/10">
-                  <FaClock className="text-blue-400 text-xl mx-auto mb-2" />
+                  <FaClock className="text-gray-300 text-xl mx-auto mb-2" />
                   <div className="text-white font-semibold">Delivery</div>
-                  <div className="text-blue-400 font-bold text-lg">
+                  <div className="text-gray-300 font-bold text-lg">
                     {selectedServiceData.deliveryTime}
                   </div>
                 </div>
                 <div className="text-center p-4 bg-white/5 rounded-xl border border-white/10">
-                  <FaRocket className="text-purple-400 text-xl mx-auto mb-2" />
+                  <FaRocket className="text-gray-300 text-xl mx-auto mb-2" />
                   <div className="text-white font-semibold">Quality</div>
-                  <div className="text-purple-400 font-bold text-lg">
+                  <div className="text-gray-300 font-bold text-lg">
                     Premium
                   </div>
                 </div>
@@ -356,81 +286,11 @@ const Services: React.FC = () => {
               </div>
 
               <div className="mt-8 pt-6 border-t border-white/10">
-                <button className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 group">
+                <button className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-gray-700 to-gray-900 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-gray-700/25 transition-all duration-300 group">
                   Get Started Now
                   <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
                 </button>
               </div>
-            </div>
-          </motion.div>
-        )}
-
-        {/* Packages (for web development) */}
-        {selectedService === "web-development" && packages[selectedService] && (
-          <motion.div
-            className="mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-3xl font-bold text-white text-center mb-8">
-              Choose Your Package
-            </h3>
-            <div className="grid md:grid-cols-3 gap-8">
-              {packages[selectedService].map((pkg, index) => (
-                <div
-                  key={index}
-                  className={`relative bg-white/5 backdrop-blur-xl rounded-2xl border p-8 transition-all duration-300 hover:transform hover:-translate-y-1 ${
-                    index === 1
-                      ? "border-blue-500/50 shadow-lg shadow-blue-500/10 scale-105"
-                      : "border-white/10 hover:border-white/20"
-                  }`}
-                >
-                  {index === 1 && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
-                        Most Popular
-                      </span>
-                    </div>
-                  )}
-
-                  <div className="text-center mb-6">
-                    <h4 className="text-2xl font-bold text-white mb-2">
-                      {pkg.name}
-                    </h4>
-                    <div className="text-4xl font-bold text-blue-400 mb-1">
-                      {pkg.price}
-                    </div>
-                    <div className="text-gray-400">
-                      Delivered in {pkg.deliveryTime}
-                    </div>
-                  </div>
-
-                  <div className="space-y-3 mb-8">
-                    {pkg.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-3">
-                        <FaCheckCircle className="text-green-400 text-sm flex-shrink-0" />
-                        <span className="text-gray-300 text-sm">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="text-center text-sm text-gray-400 mb-6">
-                    {pkg.revisions} • Source Code Included
-                  </div>
-
-                  <button
-                    className={`w-full py-3 rounded-xl font-semibold transition-all duration-300 ${
-                      index === 1
-                        ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:shadow-lg hover:shadow-blue-500/25"
-                        : "bg-white/10 text-white hover:bg-white/20"
-                    }`}
-                  >
-                    Choose {pkg.name}
-                  </button>
-                </div>
-              ))}
             </div>
           </motion.div>
         )}
@@ -444,7 +304,7 @@ const Services: React.FC = () => {
           viewport={{ once: true }}
         >
           <h3 className="text-3xl font-bold text-white mb-8">Why Choose Me?</h3>
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             {[
               {
                 icon: FaRocket,
@@ -463,18 +323,13 @@ const Services: React.FC = () => {
                 title: "24/7 Support",
                 description: "Available for communication and project updates",
               },
-              {
-                icon: FaDollarSign,
-                title: "Fair Pricing",
-                description: "Competitive rates with no hidden costs",
-              },
             ].map((item, index) => (
               <div
                 key={index}
                 className="p-6 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10"
               >
                 <div className="flex justify-center mb-4">
-                  <item.icon className="text-3xl text-blue-400" />
+                  <item.icon className="text-3xl text-gray-300" />
                 </div>
                 <h4 className="text-white font-semibold mb-2">{item.title}</h4>
                 <p className="text-gray-300 text-sm">{item.description}</p>

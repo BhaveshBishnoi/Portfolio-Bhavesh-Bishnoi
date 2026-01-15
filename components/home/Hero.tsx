@@ -106,7 +106,7 @@ const Hero: React.FC = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center py-20 px-4 overflow-hidden">
       {/* Enhanced Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800">
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-950 to-gray-900">
         <div className="absolute inset-0">
           <div className="absolute top-0 -left-4 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
           <div className="absolute top-0 -right-4 w-72 h-72 bg-yellow-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
@@ -144,7 +144,7 @@ const Hero: React.FC = () => {
               >
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                 <span className="text-green-400 text-sm font-medium">
-                  Available for Freelance Projects
+                  Available for New Projects
                 </span>
               </motion.div>
 
@@ -163,7 +163,7 @@ const Hero: React.FC = () => {
                   Full Stack Developer
                 </h2>
                 <p className="text-lg md:text-xl text-blue-400 font-medium">
-                  Freelance Web Developer & Tech Consultant
+                  Professional Web Developer & Tech Consultant
                 </p>
               </motion.div>
 

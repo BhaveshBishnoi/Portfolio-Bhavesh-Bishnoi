@@ -368,7 +368,7 @@ const Projects: React.FC = () => {
   return (
     <section id="projects" className="relative py-20 px-4 min-h-screen">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-slate-900 to-gray-800">
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-950 to-gray-900">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_20%,rgba(168,85,247,0.1),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_60%_80%,rgba(59,130,246,0.1),transparent_50%)]"></div>
       </div>
@@ -433,11 +433,10 @@ const Projects: React.FC = () => {
             <button
               key={category.id}
               onClick={() => setActiveCategory(category.id)}
-              className={`flex items-center gap-2 px-6 py-3 rounded-xl transition-all duration-300 ${
-                activeCategory === category.id
+              className={`flex items-center gap-2 px-6 py-3 rounded-xl transition-all duration-300 ${activeCategory === category.id
                   ? "bg-blue-600 text-white shadow-lg shadow-blue-600/25"
                   : "bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white border border-white/10"
-              }`}
+                }`}
             >
               <span className="text-lg">{category.icon}</span>
               <span>{category.name}</span>
@@ -475,19 +474,18 @@ const Projects: React.FC = () => {
               {/* Status Badge */}
               <div className="absolute top-4 right-4 z-10">
                 <span
-                  className={`text-xs px-3 py-1 rounded-full border ${
-                    project.status === "completed"
+                  className={`text-xs px-3 py-1 rounded-full border ${project.status === "completed"
                       ? "bg-green-500/20 text-green-400 border-green-500/30"
                       : project.status === "in-progress"
-                      ? "bg-blue-500/20 text-blue-400 border-blue-500/30"
-                      : "bg-orange-500/20 text-orange-400 border-orange-500/30"
-                  }`}
+                        ? "bg-blue-500/20 text-blue-400 border-blue-500/30"
+                        : "bg-orange-500/20 text-orange-400 border-orange-500/30"
+                    }`}
                 >
                   {project.status === "completed"
                     ? "Completed"
                     : project.status === "in-progress"
-                    ? "In Progress"
-                    : "Maintenance"}
+                      ? "In Progress"
+                      : "Maintenance"}
                 </span>
               </div>
 
