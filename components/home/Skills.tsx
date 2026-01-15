@@ -290,7 +290,7 @@ const Skills: React.FC = () => {
   return (
     <section id="skills" className="relative py-20 px-4 min-h-screen">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-950 to-gray-900">
+      <div className="absolute inset-0 bg-black">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(120,119,198,0.1),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(255,119,198,0.1),transparent_50%)]"></div>
       </div>
@@ -327,7 +327,7 @@ const Skills: React.FC = () => {
               key={category.id}
               onClick={() => setActiveCategory(category.id)}
               className={`group flex items-center gap-3 px-6 py-4 rounded-xl transition-all duration-300 ${activeCategory === category.id
-                  ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg shadow-blue-500/25"
+                  ? "bg-gradient-to-r from-gray-700 to-gray-900 text-white shadow-lg shadow-blue-500/25"
                   : "bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white border border-white/10"
                 }`}
             >
@@ -366,7 +366,7 @@ const Skills: React.FC = () => {
                   />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-white font-semibold text-lg group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-white font-semibold text-lg group-hover:text-gray-300 transition-colors">
                     {skill.name}
                   </h3>
                   <div className="text-sm text-gray-400">
@@ -380,13 +380,13 @@ const Skills: React.FC = () => {
               <div className="mb-4">
                 <div className="flex justify-between items-center mb-2">
                   <span className="text-sm text-gray-400">Proficiency</span>
-                  <span className="text-sm font-semibold text-blue-400">
+                  <span className="text-sm font-semibold text-gray-300">
                     {skill.proficiency}%
                   </span>
                 </div>
                 <div className="w-full bg-gray-800 rounded-full h-2">
                   <motion.div
-                    className="h-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-600"
+                    className="h-2 rounded-full bg-gradient-to-r from-gray-700 to-gray-900"
                     initial={{ width: 0 }}
                     whileInView={{ width: `${skill.proficiency}%` }}
                     transition={{ duration: 1, delay: index * 0.1 }}
@@ -433,7 +433,7 @@ const Skills: React.FC = () => {
               ].map((tech, index) => (
                 <span
                   key={index}
-                  className="px-4 py-2 bg-gradient-to-r from-blue-500/20 to-purple-600/20 border border-blue-500/30 text-blue-400 rounded-full text-sm font-medium"
+                  className="px-4 py-2 bg-gradient-to-r from-gray-700/20 to-gray-900/20 border border-gray-700/30 text-gray-300 rounded-full text-sm font-medium"
                 >
                   Currently Learning: {tech}
                 </span>

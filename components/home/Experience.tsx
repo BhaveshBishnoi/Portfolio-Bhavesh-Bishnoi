@@ -40,164 +40,75 @@ const Experience: React.FC = () => {
 
   const experiences: Experience[] = [
     {
-      id: "hindicreator",
-      role: "Founder & Full Stack Developer",
-      company: "HindiCreator.com",
+      id: "coderxpoint",
+      role: "Full Stack Developer",
+      company: "CoderXpoint Pvt. Ltd.",
       location: "Remote",
-      duration: "June 2020 - Present",
-      type: "project",
-      description:
-        "Founded and developed a popular Hindi technology blog serving the Indian tech community with 100K+ monthly readers.",
-      responsibilities: [
-        "Designed and developed custom WordPress theme with advanced SEO optimization",
-        "Created and published 500+ technology articles in Hindi",
-        "Implemented monetization strategies including affiliate marketing and ads",
-        "Built automated content distribution system across social media platforms",
-        "Managed technical infrastructure and performance optimization",
-      ],
-      achievements: [
-        "Reached 100,000+ monthly organic visitors",
-        "Generated ₹50,000+ monthly revenue through multiple channels",
-        "Ranked #1 for 200+ technology-related Hindi keywords",
-        "Built engaged community of 25,000+ followers across platforms",
-        "Featured in top Hindi tech blogs by various publications",
-      ],
-      technologies: [
-        "WordPress",
-        "PHP",
-        "MySQL",
-        "JavaScript",
-        "SEO",
-        "Google Analytics",
-        "AdSense",
-      ],
-      website: "https://hindicreator.com",
-      featured: true,
-    },
-    {
-      id: "acs",
-      role: "Full Stack Web Developer",
-      company: "ACS Networks and Technologies",
-      location: "Remote Contract",
-      duration: "March 2024 - May 2024",
+      duration: "May 2024 - Present",
       type: "employment",
       description:
-        "Contracted to develop and enhance multiple WordPress-based business websites with custom functionality.",
+        "Developing responsive, high-performance web applications using modern technologies with focus on AI integration and automation.",
       responsibilities: [
-        "Developed custom WordPress themes from scratch for business websites",
-        "Created custom plugins for specific business requirements",
-        "Implemented responsive design ensuring mobile-first approach",
-        "Optimized website performance and loading speeds",
-        "Collaborated with design team to implement pixel-perfect designs",
+        "Developed responsive, high-performance web applications using React.js and TypeScript for frontend with Node.js APIs for backend services",
+        "Integrated AI features using OpenAI API and LangChain for intelligent user interactions and automated customer support",
+        "Implemented n8n automation workflows for business process optimization",
+        "Enhanced user experience through AI-powered features and intelligent interactions",
+        "Collaborated with cross-functional teams to deliver scalable solutions",
       ],
       achievements: [
-        "Delivered 2 complete website projects ahead of schedule",
-        "Improved site loading speed by 60% through optimization",
-        "Implemented custom booking system increasing conversions by 35%",
-        "Achieved 100% client satisfaction with zero revision requests",
+        "Reduced manual tasks by 60% through automation workflows",
+        "Improved operational efficiency with intelligent AI integrations",
+        "Delivered high-performance applications with optimized user experience",
+        "Successfully integrated advanced AI features for customer support",
       ],
       technologies: [
-        "WordPress",
-        "PHP",
-        "MySQL",
-        "JavaScript",
-        "CSS3",
-        "Bootstrap",
-      ],
-      website: "https://acstechnologies.net",
-    },
-    {
-      id: "freelance",
-      role: "Freelance Full Stack Developer",
-      company: "Multiple Clients",
-      location: "Remote Worldwide",
-      duration: "2020 - Present",
-      type: "freelance",
-      description:
-        "Providing comprehensive web development services to businesses, startups, and individuals across various industries.",
-      responsibilities: [
-        "End-to-end web application development using modern tech stack",
-        "E-commerce platform development with payment gateway integration",
-        "Custom CMS and dashboard development for business management",
-        "Mobile-responsive design implementation",
-        "SEO optimization and performance enhancement",
-        "Client consultation and technical requirement analysis",
-      ],
-      achievements: [
-        "Successfully delivered 50+ projects with 98% client satisfaction",
-        "Built e-commerce platforms generating $100K+ in client revenue",
-        "Developed applications serving 10,000+ active users",
-        "Maintained 95% on-time delivery rate across all projects",
-        "Established long-term partnerships with 15+ recurring clients",
-      ],
-      technologies: [
-        "React",
-        "Next.js",
+        "React.js",
+        "TypeScript",
         "Node.js",
-        "MongoDB",
-        "PostgreSQL",
-        "Stripe",
-        "AWS",
+        "OpenAI API",
+        "LangChain",
+        "n8n",
+        "Express.js",
       ],
       featured: true,
     },
     {
-      id: "projects",
-      role: "Lead Developer",
-      company: "Personal Projects & Open Source",
+      id: "blogger",
+      role: "Part-Time Technology Blogger",
+      company: "BhaveshBishnoi.com",
       location: "Remote",
-      duration: "2019 - Present",
+      duration: "2020 - Present",
       type: "project",
       description:
-        "Developing innovative web applications and contributing to open-source projects to enhance skills and give back to the community.",
+        "Creating and sharing technology content, tutorials, and insights on web development and programming.",
       responsibilities: [
-        "Conceptualized and developed full-stack applications from scratch",
-        "Implemented modern development practices and clean architecture",
-        "Created comprehensive documentation and tutorials",
-        "Mentored junior developers through code reviews and guidance",
-        "Contributed to popular open-source libraries and frameworks",
+        "Write technical articles and tutorials on web development technologies",
+        "Share insights on modern development practices and tools",
+        "Create educational content for aspiring developers",
+        "Document project experiences and learnings",
+        "Engage with the developer community through blog posts",
       ],
       achievements: [
-        "Published 20+ open-source projects with 500+ GitHub stars",
-        "Created portfolio projects showcasing advanced React patterns",
-        "Built MERN stack applications with modern deployment practices",
-        "Developed reusable component libraries used by 100+ developers",
-        "Wrote technical blogs read by 50,000+ developers",
+        "Published articles on full-stack development and AI integration",
+        "Shared knowledge on React, Next.js, and Node.js best practices",
+        "Documented real-world project experiences and solutions",
+        "Built a platform for sharing technical insights with developers",
       ],
       technologies: [
         "React",
-        "TypeScript",
         "Next.js",
         "Node.js",
-        "Docker",
-        "Vercel",
-        "GitHub Actions",
+        "TypeScript",
+        "AI/ML",
+        "Web Development",
+        "Technical Writing",
       ],
+      website: "https://bhaveshbishnoi.com",
+      featured: true,
     },
   ];
 
-  const metrics: Metric[] = [
-    {
-      label: "Projects Completed",
-      value: "50+",
-      icon: FaCode,
-    },
-    {
-      label: "Happy Clients",
-      value: "30+",
-      icon: FaUsers,
-    },
-    {
-      label: "Years Experience",
-      value: "5+",
-      icon: FaRocket,
-    },
-    {
-      label: "Success Rate",
-      value: "98%",
-      icon: FaAward,
-    },
-  ];
+
 
   const selectedExp = experiences.find((exp) => exp.id === selectedExperience);
 
@@ -225,9 +136,9 @@ const Experience: React.FC = () => {
   return (
     <section id="experience" className="relative py-20 px-4 min-h-screen">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-950 to-gray-900">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(59,130,246,0.1),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_80%,rgba(168,85,247,0.1),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-black">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(255,255,255,0.03),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_80%,rgba(100,100,100,0.05),transparent_50%)]"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -249,29 +160,7 @@ const Experience: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* Metrics */}
-        <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          {metrics.map((metric, index) => (
-            <div
-              key={index}
-              className="text-center p-6 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10"
-            >
-              <div className="flex justify-center mb-3">
-                <metric.icon className="text-3xl text-blue-400" />
-              </div>
-              <div className="text-3xl font-bold text-white mb-1">
-                {metric.value}
-              </div>
-              <div className="text-sm text-gray-400">{metric.label}</div>
-            </div>
-          ))}
-        </motion.div>
+
 
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Experience Timeline */}
@@ -283,7 +172,7 @@ const Experience: React.FC = () => {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-              <FaBriefcase className="text-blue-400" />
+              <FaBriefcase className="text-gray-300" />
               Career Timeline
             </h3>
             <div className="space-y-4">
@@ -293,16 +182,16 @@ const Experience: React.FC = () => {
                   variants={itemVariants}
                   onClick={() => setSelectedExperience(exp.id)}
                   className={`w-full text-left p-4 rounded-xl transition-all duration-300 ${selectedExperience === exp.id
-                      ? "bg-blue-600/20 border border-blue-500/30 shadow-lg"
-                      : "bg-white/5 border border-white/10 hover:bg-white/10"
+                    ? "bg-gray-800/50 border border-gray-700/50 shadow-lg"
+                    : "bg-white/5 border border-white/10 hover:bg-white/10"
                     }`}
                 >
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <h4
                         className={`font-semibold ${selectedExperience === exp.id
-                            ? "text-blue-400"
-                            : "text-white"
+                          ? "text-gray-300"
+                          : "text-white"
                           }`}
                       >
                         {exp.role}
@@ -341,7 +230,7 @@ const Experience: React.FC = () => {
                       <h3 className="text-2xl font-bold text-white mb-2">
                         {selectedExp.role}
                       </h3>
-                      <p className="text-xl text-blue-400 font-semibold">
+                      <p className="text-xl text-gray-300 font-semibold">
                         {selectedExp.company}
                       </p>
                     </div>
@@ -350,7 +239,7 @@ const Experience: React.FC = () => {
                         href={selectedExp.website}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-4 py-2 bg-blue-600/20 text-blue-400 rounded-lg border border-blue-500/30 hover:bg-blue-600/30 transition-colors"
+                        className="flex items-center gap-2 px-4 py-2 bg-gray-800/50 text-gray-300 rounded-lg border border-gray-700/50 hover:bg-gray-700/50 transition-colors"
                       >
                         <FaExternalLinkAlt />
                         <span className="hidden sm:inline">Visit Site</span>
@@ -369,10 +258,10 @@ const Experience: React.FC = () => {
                     </div>
                     <span
                       className={`px-3 py-1 rounded-full text-xs font-medium ${selectedExp.type === "freelance"
-                          ? "bg-green-500/20 text-green-400 border border-green-500/30"
-                          : selectedExp.type === "employment"
-                            ? "bg-blue-500/20 text-blue-400 border border-blue-500/30"
-                            : "bg-purple-500/20 text-purple-400 border border-purple-500/30"
+                        ? "bg-green-500/20 text-green-400 border border-green-500/30"
+                        : selectedExp.type === "employment"
+                          ? "bg-gray-700/50 text-gray-300 border border-gray-600/50"
+                          : "bg-gray-600/50 text-gray-400 border border-gray-500/50"
                         }`}
                     >
                       {selectedExp.type === "freelance"
@@ -400,7 +289,7 @@ const Experience: React.FC = () => {
                           key={index}
                           className="flex items-start gap-3 text-gray-300"
                         >
-                          <span className="text-blue-400 mt-1">•</span>
+                          <span className="text-gray-400 mt-1">•</span>
                           <span className="text-sm">{responsibility}</span>
                         </li>
                       )
