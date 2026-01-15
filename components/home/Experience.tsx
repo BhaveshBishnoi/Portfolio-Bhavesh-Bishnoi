@@ -36,7 +36,7 @@ interface Metric {
 
 const Experience: React.FC = () => {
   const [selectedExperience, setSelectedExperience] =
-    useState<string>("hindicreator");
+    useState<string>("coderxpoint");
 
   const experiences: Experience[] = [
     {
