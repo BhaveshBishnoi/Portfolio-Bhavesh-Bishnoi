@@ -392,7 +392,6 @@ const Projects: React.FC = () => {
           </p>
         </motion.div>
 
-
         {/* Category Filter */}
         <motion.div
           className="flex flex-wrap justify-center gap-4 mb-12"
